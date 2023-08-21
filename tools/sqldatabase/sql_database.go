@@ -143,7 +143,7 @@ func (sd *SQLDatabase) Close() error {
 }
 
 func (sd *SQLDatabase) sampleRows(ctx context.Context, table string, rows int) (string, error) {
-	query := fmt.Sprintf("SELECT * FROM %s LIMIT %d", table, rows)
+	query := fmt.Sprintf("SELECT TOP %d * FROM %s", rows, table)
 	result, err := sd.Query(ctx, query)
 	if err != nil {
 		return "", err
