@@ -1,4 +1,4 @@
-module github.com/tmc/langchaingo
+module github.com/csims-gr8/langchaingo
 
 go 1.20
 
